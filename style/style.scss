@@ -1,0 +1,212 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-Red: hsl(0, 78%, 62%);
+    --primary-Cyan: hsl(180, 62%, 55%);
+    --primary-Orange: hsl(34, 97%, 64%);
+    --primary-Blue: hsl(212, 86%, 64%);
+    --primary-Very-Dark-Blue: hsl(234, 12%, 34%);
+    --primary-Grayish-Blue: hsl(229, 6%, 66%);
+    --primary-Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-Very-Light-Gray);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+    padding:60px 30px;
+    #title {
+        width: 100%;
+        text-align: center;
+        color: black;
+        margin-bottom: 20px;
+        p:nth-child(1) {
+            font-weight: 300;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        p:nth-child(2) {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        p:nth-child(3) {
+            width: 100%;
+            max-width: 500px;
+            margin:0px auto;
+            font-weight: 300;
+            font-size: 0.5rem;
+        }
+    }
+    #section-container {
+        width: 100%;
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        #section-middle {
+            display:flex;
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            align-content: center;
+            margin:0px 20px;
+            .section:nth-child(1) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.section {
+    width: 100%;
+    max-width: 300px;
+    padding:20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-top: 3px solid;
+    color:black;
+    p:nth-child(1) {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    p:nth-child(2) {
+        font-weight: 300;
+        font-size:0.7rem;
+        margin-bottom: 20px;
+    }
+    span {
+        display:block;
+        width: 100%;
+        height: 50px;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    #supervisor {
+        background-image: url('../Assets/img/icon-supervisor.svg');
+    }
+    #teambuilder {
+        background-image: url('../Assets/img/icon-team-builder.svg');
+    }
+    #karma {
+        background-image: url('../Assets/img/icon-karma.svg');
+    }
+    #calculator {
+        background-image: url('../Assets/img/icon-calculator.svg');
+    }
+}
+.section.supervisor {
+    border-color: var(--primary-Cyan);
+}
+.section.teambuilder {
+    border-color: var(--primary-Red);
+}
+.section.karma {
+    border-color: var(--primary-Orange);
+}
+.section.calculator {
+    border-color: var(--primary-Blue);
+}
+
+#section-test {
+    width: 100%;
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#test-01 {
+    grid-column: 1;
+    grid-row: 1/3;
+}
+#test-02 {
+    grid-column: 2;
+}
+#test-03 {
+    grid-column: 2;
+}
+#test-04 {
+    grid-column: 3;
+    grid-row: 1/3;  
+}
+
+@media only screen and (max-width: 1000px) {
+    #container {
+        #section-container {
+            flex-flow: column wrap;
+            #section-middle {
+                margin:0px;
+            }
+        }
+    }
+    .section.section.supervisor {
+        margin-bottom: 20px;
+    }
+    .section.calculator {
+        margin-top: 20px;
+    }
+    #section-test {
+        grid-template-columns:auto auto;
+        align-items: stretch;
+    }
+    #test-01 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #test-02 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    #test-03 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #test-04 {
+        grid-column: 2;
+        grid-row: 2;  
+    }
+}
+@media only screen and (max-width: 376px) {
+    #section-test {
+        grid-template-columns: auto;
+    }
+    #test-01 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #test-02 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #test-03 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    #test-04 {
+        grid-column: 1;
+        grid-row: 4;  
+    }
+}
